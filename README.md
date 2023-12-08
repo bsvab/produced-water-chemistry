@@ -46,4 +46,4 @@ The proposed project aims to develop a Python-based tool for analyzing and visua
 -	A set of interactive, informative visualizations aiding in the interpretation of the geochemical data.
 
 ### <p style="color:#CC9900">Relevance and Impact:</p> 
-- This project aligns with current environmental and water resource management needs, offering a practical approach to repurposing produced water, thereby contributing to more sustainable practices in the industry!
+- This project aligns with current environmental and water resource management needs, offering a practical approach to repurposing produced water, thereby contributing to more sustainable practices in the industry
