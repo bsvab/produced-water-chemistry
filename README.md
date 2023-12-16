@@ -125,8 +125,8 @@ Both box and violin plots are titled with the name of the element being analyzed
 
 A example image of each type of plot for Ca concentration are included below.
 
-![BoxPlot](images/BoxPlot_Ca.png) 
-![ViolinPlot](images/ViolinPlot_Ca.png) 
+![BoxPlot](images/box_plots/BoxPlot_Ca.png) 
+![ViolinPlot](images/violin_plots/ViolinPlot_Ca.png) 
 
 #### 4.1.2. Tools & Libraries Used
 - Pandas for data manipulation.
