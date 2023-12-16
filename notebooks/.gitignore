@@ -1,6 +1,6 @@
 *.DS_Store
 testing.py
-tester2.r
+r_tester.r
 
 # From the gitignore Visual Studio template:
 
