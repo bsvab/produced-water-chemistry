@@ -1,10 +1,6 @@
 # Analysis & Visualization of Produced Water Chemistry for Environmental & Agricultural Utilization  
 
 
-## <p style="color:#CC6600">Abstract:</p> 
-
-<p style="color:red">[ SHOULD WE INCLUDE AN ABSTRACT? ]
-
 ## <p style="color:#CC6600">Table of Contents:</p> 
 
 <p style="color:red">[ MAKING A LINKED TOC WILL BE THE LAST STEP ONCE ALL OTHER SECTIONS ARE FINALIZED ]
@@ -126,6 +122,7 @@ Both box and violin plots are titled with the name of the element being analyzed
 A example image of each type of plot for Ca concentration are included below.
 
 ![BoxPlot](images/box_plots/BoxPlot_Ca.png) 
+
 ![ViolinPlot](images/violin_plots/ViolinPlot_Ca.png) 
 
 #### 4.1.2. Tools & Libraries Used
@@ -134,33 +131,7 @@ A example image of each type of plot for Ca concentration are included below.
 
 The generated plots provide a visual representation of the variability and distribution of elemental concentrations across different geological basins, aiding in comparative analysis and interpretation of geochemical data.
 
-### <p style="color:gray">4.2. Methodology for Mapping Lithium Concentration Clusters  
-
-The objective of this visualization is to spatially visualize the distribution of lithium (Li) concentrations in various geological basins using a cluster mapping approach with a focus on both overall concentration clusters and high concentration areas using interactive maps.  
-
-The DataFrame is cleaned to remove NaN  values specifically from the 'LATITUDE', 'LONGITUDE', and 'Li' columns. This ensures that only complete records are used for the analysis. A function, assign_cluster, is created to categorize lithium concentrations into distinct clusters based on predefined concentration ranges (<= 20 ppm, 21-40 ppm, 41-60 ppm, 61-80 ppm, > 80 ppm). This categorization aids in differentiating areas based on lithium concentration levels.  
-
-The assign_cluster function is applied to the 'Li' column of the DataFrame. This process assigns each record to a lithium concentration cluster, creating a new column 'Li_Cluster'. A GeoDataFrame is created from the cleaned DataFrame. The 'LATITUDE' and 'LONGITUDE' columns are used to create point geometries, facilitating spatial analysis and visualization. A Folium map object, m, is initialized, centered around the mean latitude and longitude of the data points to provide a comprehensive view of the study area.   
-
-A color scheme is defined for the different lithium concentration clusters, aiding in visual differentiation of the clusters on the map. Each data point, representing a geographical location with a specific lithium concentration, is plotted on the map as a circle marker. The color of the marker corresponds to its assigned lithium concentration cluster. An HTML-based legend is created to provide context for the color scheme used in the map. This legend is integrated into the Folium map, enhancing the interpretability of the visualization. The final map, complete with data points and the legend, is saved as an HTML file. This file can be viewed in a web browser, allowing for interactive exploration of the data.
-
-For mapping high lithium concentrations with gradient color scale, the DataFrame is filtered to include only records where lithium concentrations are equal to or greater than 80 mg/L. This subset focuses the analysis on areas with notably high lithium levels. A GeoDataFrame for the high concentration data is created. Then a linear color scale ranging from medium red to dark red is developed to represent varying levels of high lithium concentrations. The high concentration data points on a separate Folium map with colors corresponding to their specific lithium levels are plotted.  
-
-Both maps are designed to be interactive, allowing for detailed exploration of lithium concentrations.
-
-#### 4.2.1. Images  
-
-<p style="color:red">[ INSERT IMAGE HERE ]
-
-#### 4.2.2. Tools & Libraries Used  
-
-- Pandas for DataFrame operations.
-- Geopandas for handling geospatial data.
-- Folium for creating interactive maps.  
-
-This methodology enables a clear and interactive visualization of lithium concentration distributions across geological basins. It provides valuable insights into spatial patterns and concentration clusters, which are essential for geochemical analysis and decision-making in resource exploration and environmental studies.
-
-### <p style="color:gray">4.3. Methodology for Generating Piper Plots  
+### <p style="color:gray">4.2. Methodology for Generating Piper Plots  
 
 Piper plots are graphical representations that help visualize and interpret the results of water chemical analyses.
 
@@ -174,47 +145,121 @@ A modified version of the available WQChartPy library was utilized to generate t
 - Calculate the percentage contribution of each ion to the total ion concentration for each sample.
 - Plot the points.
 
-#### 4.3.1. Example Plot Images  
+#### 4.2.1. Example Plot Images  
 
 Piper plots were generated for all major basin categories in three styles. There are basic plots, contour plots, and a basic plot with color-coded background that aids in visualizing the relationship between the two ternaary diagrams and the center diamond.
 
 A example image of each style of plot for the Permian Basin data are included below.
 
 ![PiperPlot](images/piper_plots/PermianBasin_OnlyMostRecentWellSamples_Piper(Triangle).png) 
+
 ![PiperPlot](images/piper_plots/PermianBasin_OnlyMostRecentWellSamples_Piper(Contour).png) 
+
 ![PiperPlot](images/piper_plots/PermianBasin_OnlyMostRecentWellSamples_Piper(Color).png)  
 
-#### 4.3.2. Tools & Libraries Used  
+#### 4.2.2. Tools & Libraries Used  
 
 - Pandas for DataFrame operations.
 - WQChartPy for framework for the Piper plots.
 
-### <p style="color:gray">4.4. Methodology for Running a Linear Regression on Li Concentration vs Upper Depth
+### <p style="color:gray">4.3. Methodology for Mapping Scaling Element Concentration Clusters  
+
+The primary elements affecting scaling present in the produced water being studied are as follows: Calcium (Ca), Magnesium (Mg), Bicarbonate (HCO3), Silicon (Si), Total Iron (FeTot), Barium (Ba), and Strontium (Sr).
+
+In order to identify the sources of the most problematic produced water for each of these elements, the top 10% of sample concentrations are considered to produce maps showing which basins produce the highest concentrations of the respective elements of interest.
 
 <p style="color:red">[ ... ]
 
-## <p style="color:#CC6600">5. Results:</p> 
+#### 4.3.1. Screenshots of Interactive HTML Maps  
 
-<p style="color:red">[ ... ]  
+An example screenshot of the map showing the samples with the highest Ca concentrations is included below. A map was generated for all scaling elements listed above.
 
-## <p style="color:#CC6600">6. Conclusion:</p> 
+<p style="color:red">[ ... ]
+
+#### 4.3.2. Tools & Libraries Used  
+
+<p style="color:red">[ ... ]
+
+### <p style="color:gray">4.4. Methodology for Mapping Lithium Concentration Clusters  
+
+The objective of this visualization is to spatially visualize the distribution of lithium (Li) concentrations in various geological basins using a cluster mapping approach with a focus on both overall concentration clusters and high concentration areas using interactive maps.  
+
+The DataFrame is cleaned to remove NaN  values specifically from the 'LATITUDE', 'LONGITUDE', and 'Li' columns. This ensures that only complete records are used for the analysis. A function, assign_cluster, is created to categorize lithium concentrations into distinct clusters based on predefined concentration ranges (<= 20 ppm, 21-40 ppm, 41-60 ppm, 61-80 ppm, > 80 ppm). This categorization aids in differentiating areas based on lithium concentration levels.  
+
+The assign_cluster function is applied to the 'Li' column of the DataFrame. This process assigns each record to a lithium concentration cluster, creating a new column 'Li_Cluster'. A GeoDataFrame is created from the cleaned DataFrame. The 'LATITUDE' and 'LONGITUDE' columns are used to create point geometries, facilitating spatial analysis and visualization. A Folium map object, m, is initialized, centered around the mean latitude and longitude of the data points to provide a comprehensive view of the study area.   
+
+A color scheme is defined for the different lithium concentration clusters, aiding in visual differentiation of the clusters on the map. Each data point, representing a geographical location with a specific lithium concentration, is plotted on the map as a circle marker. The color of the marker corresponds to its assigned lithium concentration cluster. An HTML-based legend is created to provide context for the color scheme used in the map. This legend is integrated into the Folium map, enhancing the interpretability of the visualization. The final map, complete with data points and the legend, is saved as an HTML file. This file can be viewed in a web browser, allowing for interactive exploration of the data.
+
+For mapping high lithium concentrations with gradient color scale, the DataFrame is filtered to include only records where lithium concentrations are equal to or greater than 80 mg/L. This subset focuses the analysis on areas with notably high lithium levels. A GeoDataFrame for the high concentration data is created. Then a linear color scale ranging from medium red to dark red is developed to represent varying levels of high lithium concentrations. The high concentration data points on a separate Folium map with colors corresponding to their specific lithium levels are plotted.  
+
+Both maps are designed to be interactive, allowing for detailed exploration of lithium concentrations.
+
+#### 4.4.1. Screenshots of Interactive HTML Maps  
+
+![LiMap](images/geo_plots/Li_cluster_map_screenshot.png) 
+
+![LiMap](images/geo_plots/Li_high_concentration_map_screenshot.png) 
+
+#### 4.4.2. Tools & Libraries Used  
+
+- Pandas for DataFrame operations.
+- Geopandas for handling geospatial data.
+- Folium for creating interactive maps.  
+
+This methodology enables a clear and interactive visualization of lithium concentration distributions across geological basins. It provides valuable insights into spatial patterns and concentration clusters, which are essential for geochemical analysis and decision-making in resource exploration and environmental studies.
+
+### <p style="color:gray">4.5. Methodology for Generating a Linear Regression on Li Concentration vs Upper Depth
+
+<p style="color:red">[ ... ]
+
+#### 4.5.1. Plot Images  
+
+<p style="color:red">[ ... ]
+
+#### 4.5.2. Tools & Libraries Used  
+
+<p style="color:red">[ ... ]
+
+## <p style="color:#CC6600">5. Conclusion:</p> 
 
 This project sheds light on the chemistry of produced water in the oil and gas industry, offering practical solutions for environmental and resource management. The key achievements include:  
 
-1. Detailed Analysis of Produced Water: Understanding the complex makeup of produced water is crucial for better treatment strategies. This project provides clear insights into what's in this water, which is vital for companies looking to manage it more effectively.
-2. Lithium Extraction Potential: Investigating how to extract lithium from produced water could turn an environmental problem into a valuable resource. With lithium's growing demand, especially in renewable energy, this could be a game-changer.
-3. Alignment with DOE Goals: This study aligns with the Department of Energy’s objectives, contributing to research that can lead to more sustainable industry practices.
-4. Practical Methodologies: The approach taken in this study – from gathering and processing data to analyzing chemical content – is straightforward and can be replicated in similar studies or applied in real-world scenarios.
-5. Support for Better Water Management: The findings support the development of more sustainable water management practices, helping companies reduce environmental impacts while finding value in what was once waste.
-6. Opens Doors for Resource Recovery: The study encourages further exploration into recovering resources from produced water, promoting innovative approaches in the industry.  
+1. <ins>Detailed Analysis of Produced Water</ins>: Understanding the complex makeup of produced water is crucial for better treatment strategies. This project provides clear insights into what's in this water, which is vital for companies looking to manage it more effectively.
+2. <ins>Lithium Extraction Potential</ins>: Investigating how to extract lithium from produced water could turn an environmental problem into a valuable resource. With lithium's growing demand, especially in renewable energy, this could be a game-changer.
+3. <ins>Alignment with DOE Goals</ins>: This study aligns with the Department of Energy’s objectives, contributing to research that can lead to more sustainable industry practices.
+4. <ins>Practical Methodologies</ins>: The approach taken in this study – from gathering and processing data to analyzing chemical content – is straightforward and can be replicated in similar studies or applied in real-world scenarios.
+5. Support for Better Water Management</ins>: The findings support the development of more sustainable water management practices, helping companies reduce environmental impacts while finding value in what was once waste.
+6. <ins>Opens Doors for Resource Recovery</ins>: The study encourages further exploration into recovering resources from produced water, promoting innovative approaches in the industry.  
 
 In summary, this project not only offers a deeper understanding of produced water's composition but also paves the way for turning environmental challenges into economic opportunities. The insights gained could be significant for stakeholders looking to enhance environmental responsibility while exploring new avenues for resource utilization.
 
-## <p style="color:#CC6600">7. Glossary of Terms:</p> 
+## <p style="color:#CC6600">6. Glossary of Terms:</p> 
 
-<p style="color:red">[ ... ]  
+1.	<ins>Produced Water</ins>: This refers to the water that is brought to the surface during oil and gas extraction. It often contains various organic and inorganic substances and is typically considered a byproduct of the hydrocarbon extraction process.
 
-## <p style="color:#CC6600">8. Technologies:</p> 
+2.	<ins>Well Depth</ins>: The vertical distance measured from the surface to the bottom of a well. This is a critical factor in geological and hydrological studies as it can influence the characteristics of the water or oil extracted.
+
+3.	<ins>Basin (Geological Basin)</ins>: A large-scale geological depression, often circular or elliptical in shape, where layers of sediment accumulate over time. Basins are critical in petroleum geology as they are often the sites of significant accumulations of oil and natural gas. These structures are formed by tectonic actions such as subsidence of the Earth's crust and can vary widely in size and complexity.
+
+4.	<ins>Formation (Geological Formation in Oil and Gas Reservoirs)</ins>: In the context of oil and gas exploration and production, a geological formation is a distinct layer of sedimentary rock with consistent characteristics that distinguish it from adjacent strata. These formations are critical in identifying potential reservoirs of hydrocarbons. They often contain organic material that, over geological time, has been transformed into oil and gas. The properties of a formation, such as porosity, permeability, and thickness, are key factors in determining the viability and productivity of an oil or gas reservoir. In oil and gas terminology, formations are usually named after the geographic location where they were first studied or identified. Understanding the geological formations is essential for successful drilling and extraction operations, as it guides the placement of wells and informs predictions about the presence and recoverability of oil and gas deposits.
+
+5.	<ins>Major Elements</ins>: These are the elements found in high concentrations in geological samples. They are significant in geochemical investigations as they influence the chemical and physical properties of rocks and fluids.
+
+6.	<ins>Scaling Elements in Produced Water Treatment</ins>: In the context of produced water treatment, scaling elements refer to minerals like calcium, magnesium, barium, and strontium, which can precipitate out of produced water under certain conditions. These precipitates can form scale that coats and clogs pipes and equipment, causing significant operational challenges in treatment processes. Managing scaling elements is crucial for efficient and cost-effective treatment of produced water.
+
+7.	<ins>Concentration</ins>: The abundance of a constituent divided by the total volume of a mixture. In geochemistry, concentration is a fundamental concept used to quantify the level of a particular element or compound in a geological sample. It is critical for understanding the composition and quality of groundwater, surface water, and produced water.
+
+8.	<ins>Molarity</ins>: A unit of concentration in chemistry, representing the number of moles of a solute dissolved in one liter of solution. It is a standard measure for quantifying the concentration of elements or compounds in a solution, crucial in geochemical analyses to determine the precise chemical makeup of water samples, including produced water.
+
+9.	<ins>Charge Balance</ins>: In geochemistry, this refers to the state where the sum of the charges from all the cations (positively charged ions) and anions (negatively charged ions) in a solution are balanced. It's important for understanding the chemical stability of mineral waters and produced waters.
+
+10.	<ins>Total Dissolved Solid (TDS)</ins>: A measure of the combined content of all inorganic and organic substances contained in a liquid. In water quality analysis and geochemistry, TDS is used to indicate the general quality of the water.
+
+11.	<ins>Violin Plot</ins>: A method of data visualization that combines a box plot with a kernel density plot. In environmental and geochemical studies, violin plots can illustrate the distribution and probability density of data, particularly useful for comparing multiple data sets.
+
+12.	<ins>Piper Plot</ins>: A graphical representation used in hydrochemistry to illustrate the chemical composition of water samples. The plot is divided into three fields: two triangular fields that show the major cations (calcium, magnesium, sodium, and potassium) and anions (carbonate, bicarbonate, sulfate, and chloride) respectively, and a central diamond-shaped field that provides a comprehensive view of water chemistry. Piper plots are instrumental in understanding the geochemical evolution of water, identifying water types, and assessing water-rock interaction processes.  
+
+## <p style="color:#CC6600">7. Technologies:</p> 
 
 - [Python 3.10 or higher](https://www.python.org/)
 - [Pandas](https://pandas.pydata.org/)
@@ -226,11 +271,12 @@ In summary, this project not only offers a deeper understanding of produced wate
 - [Seaborn](https://seaborn.pydata.org/#) 
 - [GeoPandas](https://geopandas.org/en/stable/#) 
 - [Folium](https://pypi.org/project/folium/)
+- [Branca](https://pypi.org/project/branca/)
 - [HTML](https://html.spec.whatwg.org/multipage/)
 
-<p style="color:red">[ NEED TO CONFIRM THE ABOVE LIST VS FINAL CODE IMPORTS - DON'T NEED TO LIST OS AND WARNINGS SINCE THEY'RE COVERED BY LISTING PYTHON 3.10 ]
+<p style="color:red">[ NEED TO CONFIRM THE ABOVE LIST VS FINAL CODE IMPORTS - DON'T NEED TO LIST OS, MATH, AND WARNINGS SINCE THEY'RE COVERED BY LISTING PYTHON 3.10 ]
 
-## <p style="color:#CC6600">9. Contributors:</p> 
+## <p style="color:#CC6600">8. Contributors:</p> 
 
 - [Roxana Darvari](https://github.com/roxanadrv)
 - [Brittany Svab](https://github.com/bsvab)
