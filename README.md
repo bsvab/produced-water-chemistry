@@ -1,11 +1,40 @@
 # Analysis & Visualization of Produced Water Chemistry for Environmental & Agricultural Utilization  
 
+## <p style="color:#CC6600">Abstract:</p> 
+
+Produced water, a byproduct of oil and gas extraction, poses environmental challenges due to its complex chemical composition and high salinity. This project focuses on two key objectives: analyzing the chemistry of produced water with a focus on scaling elements and evaluating the availability of lithium for potential extraction. Utilizing data from the United States Geological Survey (USGS), a comprehensive methodology for data cleaning and filtering is employed to ensure accuracy.
+
+The analysis encompasses key elements such as Sodium, Calcium, Chloride, Sulfate, and Magnesium, with a focus on Total Dissolved Solids (TDS) greater than 35,000 ppm. Applying natural chemical balance conditions refines the dataset, and stringent charge balance criteria are employed for reliability. Missing data are addressed with tailored strategies respecting chemical properties.
+
+Visualizations include box and violin plots showcasing elemental concentrations across geological basins, Piper plots for water type classification, and interactive maps revealing scaling element and lithium concentration clusters. The methodology ensures a clear representation of scaling element and lithium distribution and facilitates insights into spatial patterns. Furthermore, the project introduces a linear regression analysis on lithium concentration versus depth to investigate whether a relationship is present.  
+
+In conclusion, this research provides a nuanced understanding of produced water chemistry, supports sustainable water management, aligns with DOE goals, and explores the potential for resource recovery. The methodologies presented are adaptable, promoting transparency and fostering environmentally responsible practices in the oil and gas industry.
 
 ## <p style="color:#CC6600">Table of Contents:</p> 
 
-<p style="color:red">[ MAKING A LINKED TOC WILL BE THE LAST STEP ONCE ALL OTHER SECTIONS ARE FINALIZED ]
+[1. Introduction](#1-introduction)  
+&nbsp;&nbsp;&nbsp;&nbsp;[1.1 Overview of Produced Water](#11-overview-of-produced-water)    
+&nbsp;&nbsp;&nbsp;&nbsp;[1.2 Objectives](#11-overview-of-produced-water)  
+[2. Data Acquisition & Initial Processing](#2-data-acquisition--initial-processing)  
+&nbsp;&nbsp;&nbsp;&nbsp;[2.1 Raw Data Acquisition](#21-raw-data-acquisition)  
+&nbsp;&nbsp;&nbsp;&nbsp;[2.2 Data Loading & Merging](#22-data-loading-and-merging)  
+[3. Data Cleaning & Filtering](#3-data-cleaning--filtering)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.1 Column Removal](#31-column-removal)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.2 Data Filtering Based on TDS](#32-data-filtering-based-on-tds)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.3 Applying Conditions for Filtering](#33-applying-conditions-for-filtering)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.4 Handling Missing Data](#34-handling-missing-data)  
+[4. Visualization](#4-visualization)  
+&nbsp;&nbsp;&nbsp;&nbsp;[4.1 Methodology for Generating Box & Violin Plots](#41-methodology-for-generating-box--violin-plots)  
+&nbsp;&nbsp;&nbsp;&nbsp;[4.2 Methodology for Generating Piper Plots](#42-methodology-for-generating-piper-plots)  
+&nbsp;&nbsp;&nbsp;&nbsp;[4.3 Methodology for Mapping Scaling Element Concentration Clusters](#43-methodology-for-mapping-scaling-element-concentration-clusters)  
+&nbsp;&nbsp;&nbsp;&nbsp;[4.4 Methodology for Mapping Lithium Concentration Clusters](#44-methodology-for-mapping-lithium-concentration-clusters)  
+&nbsp;&nbsp;&nbsp;&nbsp;[4.5 Methodology for Generating a Linear Regression on Li Concentration vs Depth](#45-methodology-for-generating-a-linear-regression-on-li-concentration-vs-depth)  
+[5. Conclusion](#5-conclusion)  
+[6. Glossary of Terms](#6-glossary-of-terms)  
+[7. Technologies](#7-technologies)  
+[8. Contributors](#8-contributors)  
 
-## <p style="color:#CC6600">1. Introduction:</p> 
+## <p style="color:#CC6600">1. Introduction:</p>  
 
 ### <p style="color:gray">1.1. Overview of Produced Water</p>  
 
@@ -27,9 +56,11 @@ This project, aligning with DOE's research interests, is centered around two key
 
 ### <p style="color:gray">2.1. Raw Data Acquisition</p>  
 
-The raw dataset for this study was sourced from the United States Geological Survey (USGS) website, available: https://data.usgs.gov/datacatalog/data/USGS:59d25d63e4b05fe04cc235f9 . This dataset contains extensive information on the chemistry of produced water from various sites. Due to the considerable size of the dataset, it was split into three separate CSV files to facilitate easier handling and uploading.
+The raw dataset for this study was sourced from the United States Geological Survey (USGS) website, available at: https://data.usgs.gov/datacatalog/data/USGS:59d25d63e4b05fe04cc235f9 . This dataset contains extensive information on the chemistry of produced water from various sites. Due to the considerable size of the dataset, it was split into three separate CSV files to facilitate easier handling and uploading.
 
-### <p style="color:gray">2.2. Data Loading and Merging</p>  
+The sedimentary basin geographical map layer information was sourced from the US Energy Information Administration, available at: https://atlas.eia.gov/datasets/6542690951ca45f2a3c23a4325153d7d_0/explore?location=32.370257%2C-96.374846%2C4.81.
+
+### <p style="color:gray">2.2. Data Loading & Merging</p>  
 
 The individual CSV files were loaded into Pandas DataFrames. These separate DataFrames were then concatenated to form a single, comprehensive DataFrame representing the entire dataset. This step was crucial for ensuring a unified analysis across all data points.
 
@@ -52,7 +83,7 @@ In the data cleaning and filtering phase, specific criteria were applied to refi
 
 The molar concentration of each element is calculated using its concentration in ppm and its molar mass. The formula used is:  
 
-![Formula](images/MolarityFormula.png)  
+![Formula](images/other/MolarityFormula.png)  
 
 For the analysis, the following molar masses were used:  
 Sodium (Na): 22.99 g/mol  
@@ -172,13 +203,17 @@ In order to identify the sources of the most problematic produced water for each
 
 #### 4.3.1. Screenshots of Interactive HTML Maps  
 
-An example screenshot of the map showing the samples with the highest Ca concentrations is included below. A map was generated for all scaling elements listed above.
+An example screenshot of the maps showing the samples with the highest Ca concentrations is included below. Maps were generated for all scaling elements listed above.
 
 <p style="color:red">[ ... ]
 
 #### 4.3.2. Tools & Libraries Used  
 
-<p style="color:red">[ ... ]
+- Pandas for DataFrame operations.
+- Geopandas for handling geospatial data.
+- Folium for creating interactive maps.  
+
+This methodology enables a clear and interactive visualization of lithium concentration distributions across geological basins. It provides valuable insights into spatial patterns and concentration clusters, which are essential for geochemical analysis and decision-making in resource exploration and environmental studies.  
 
 ### <p style="color:gray">4.4. Methodology for Mapping Lithium Concentration Clusters  
 
@@ -208,17 +243,20 @@ Both maps are designed to be interactive, allowing for detailed exploration of l
 
 This methodology enables a clear and interactive visualization of lithium concentration distributions across geological basins. It provides valuable insights into spatial patterns and concentration clusters, which are essential for geochemical analysis and decision-making in resource exploration and environmental studies.
 
-### <p style="color:gray">4.5. Methodology for Generating a Linear Regression on Li Concentration vs Upper Depth
+### <p style="color:gray">4.5. Methodology for Generating a Linear Regression on Li Concentration vs Depth
 
-<p style="color:red">[ ... ]
+Linear regression plots were generated to investigate whether there is a linear relationship between Li concentration and depth. Data was grouped and assesed for each basin as the depth varies among basins. The resulting regression plots resulted in r-squared values that are too low to indicate a correlation. Additional clustering would be necessary to conclusively demonstrate whether another scenario would glean differing results.
 
-#### 4.5.1. Plot Images  
+#### 4.5.1. Example Plot Image  
 
-<p style="color:red">[ ... ]
+A linear regression plot was generated for each basin. An example plot for the Permian Basin is included for reference below.
+
+![LiLinReg](images/regression_plots/LinReg_LivsDepth_PermianBasin.png) 
 
 #### 4.5.2. Tools & Libraries Used  
 
-<p style="color:red">[ ... ]
+- Pandas for DataFrame operations.  
+- Matplotlib for plotting the linear regression.  
 
 ## <p style="color:#CC6600">5. Conclusion:</p> 
 
@@ -228,7 +266,7 @@ This project sheds light on the chemistry of produced water in the oil and gas i
 2. <ins>Lithium Extraction Potential</ins>: Investigating how to extract lithium from produced water could turn an environmental problem into a valuable resource. With lithium's growing demand, especially in renewable energy, this could be a game-changer.
 3. <ins>Alignment with DOE Goals</ins>: This study aligns with the Department of Energy’s objectives, contributing to research that can lead to more sustainable industry practices.
 4. <ins>Practical Methodologies</ins>: The approach taken in this study – from gathering and processing data to analyzing chemical content – is straightforward and can be replicated in similar studies or applied in real-world scenarios.
-5. Support for Better Water Management</ins>: The findings support the development of more sustainable water management practices, helping companies reduce environmental impacts while finding value in what was once waste.
+5. <ins>Support for Better Water Management</ins>: The findings support the development of more sustainable water management practices, helping companies reduce environmental impacts while finding value in what was once waste.
 6. <ins>Opens Doors for Resource Recovery</ins>: The study encourages further exploration into recovering resources from produced water, promoting innovative approaches in the industry.  
 
 In summary, this project not only offers a deeper understanding of produced water's composition but also paves the way for turning environmental challenges into economic opportunities. The insights gained could be significant for stakeholders looking to enhance environmental responsibility while exploring new avenues for resource utilization.
@@ -273,8 +311,6 @@ In summary, this project not only offers a deeper understanding of produced wate
 - [Folium](https://pypi.org/project/folium/)
 - [Branca](https://pypi.org/project/branca/)
 - [HTML](https://html.spec.whatwg.org/multipage/)
-
-<p style="color:red">[ NEED TO CONFIRM THE ABOVE LIST VS FINAL CODE IMPORTS - DON'T NEED TO LIST OS, MATH, AND WARNINGS SINCE THEY'RE COVERED BY LISTING PYTHON 3.10 ]
 
 ## <p style="color:#CC6600">8. Contributors:</p> 
 
