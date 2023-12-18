@@ -1,3 +1,5 @@
+# The below code has been adapted from WQChartPy and adjusted for the needs of this project
+
 import os
 import numpy as np
 import pandas as pd
@@ -5,7 +7,6 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 
 # Ion info
-
 ions_WEIGHT = {'Ca'  : 40.0780,
                'Mg'  : 24.3050,
                'K'   : 39.0983,
@@ -14,7 +15,6 @@ ions_WEIGHT = {'Ca'  : 40.0780,
                'SO4' : 96.0636,
                'CO3' : 60.0092,
                'HCO3': 61.0171}
-
 ions_CHARGE = {'Ca'  : +2,
                'Mg'  : +2,
                'K'   : +1, 
