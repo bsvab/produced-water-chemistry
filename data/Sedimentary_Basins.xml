@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <title>U.S. Sedimentary Basins</title>
+                <geoform>vector digital data</geoform>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>Sedimentary basins associated with the EIA shale plays as of 5-6-2011</abstract>
+            <purpose>Sedimentary basins associated with the EIA shale plays as of 5-6-2011. Sedimentary basin which do not have shale plays as of publication date are not included in this file. Sources for the basins are mostly from the US Geological Survey and state agencies such as the WY Geological Survey.</purpose>
+        </descript>
+        <spdom>
+            <bounding>
+                <westbc>-134.7472926179282</westbc>
+                <eastbc>-55.695547615410334</eastbc>
+                <northbc>50.309217030289695</northbc>
+                <southbc>23.560962423770285</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>ISO 19115 Topic Categories</themekt>
+                <themekey>geoscientificInformation</themekey>
+            </theme>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>EIA</themekey>
+                <themekey>EIA.gov</themekey>
+                <themekey>Energy</themekey>
+                <themekey>U.S. Energy Information Administration</themekey>
+                <themekey>USGS</themekey>
+            </theme>
+        </keywords>
+        <accconst>Other Constraints</accconst>
+        <useconst>The U.S. Energy Information Administration shall not be held liable for improper or incorrect use of the data described and/or contained herein. These data and related graphics, if available, are not legal documents and are not intended to be used as such. The information contained in these data is dynamic and may change over time. The U.S. Energy Information Administration gives no warranty, expressed or implied, as to the accuracy, reliability, or completeness of these data.</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Z Inc. (contractor to EIA)</cntorg>
+                    <cntper>Sam Limerick</cntper>
+                </cntorgp>
+                <cntpos>GIS Analyst/ Geologist</cntpos>
+                <cntemail>samuel.limerick@eia.doe.gov</cntemail>
+            </cntinfo>
+        </ptcontac>
+        <datacred>U.S. Energy Information Administration (EIA.gov)</datacred>
+        <native>Version 6.2 (Build 9200) ; Esri ArcGIS 10.3.1.4959</native>
+    </idinfo>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>GT-polygon composed of chains</sdtstype>
+                <ptvctcnt>0</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>SedimentaryBasins_US_May2011_v2</enttypl>
+            </enttyp>
+            <attr>
+                <attrlabl>FID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>Shape</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Coordinates defining the features.</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>NAME</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Area_sq_km</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Area_sq_mi</attrlabl>
+            </attr>
+        </detailed>
+    </eainfo>
+    <metainfo>
+        <metd>20160310</metd>
+        <metc>
+            <cntinfo>
+                <!--no contact person or organization name available-->
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>
