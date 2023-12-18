@@ -17,7 +17,7 @@ In conclusion, this research provides a nuanced understanding of produced water 
 &nbsp;&nbsp;&nbsp;&nbsp;[1.2 Objectives](#11-overview-of-produced-water)  
 [2. Data Acquisition & Initial Processing](#2-data-acquisition--initial-processing)  
 &nbsp;&nbsp;&nbsp;&nbsp;[2.1 Raw Data Acquisition](#21-raw-data-acquisition)  
-&nbsp;&nbsp;&nbsp;&nbsp;[2.2 Data Loading & Merging](#22-data-loading-and-merging)  
+&nbsp;&nbsp;&nbsp;&nbsp;[2.2 Data Loading & Merging](#22-data-loading--merging)  
 [3. Data Cleaning & Filtering](#3-data-cleaning--filtering)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.1 Column Removal](#31-column-removal)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.2 Data Filtering Based on TDS](#32-data-filtering-based-on-tds)  
