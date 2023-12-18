@@ -195,25 +195,31 @@ A example image of each style of plot for the Permian Basin data are included be
 
 ### <p style="color:gray">4.3. Methodology for Mapping Scaling Element Concentration Clusters  
 
-The primary elements affecting scaling present in the produced water being studied are as follows: Calcium (Ca), Magnesium (Mg), Bicarbonate (HCO3), Silicon (Si), Total Iron (FeTot), Barium (Ba), and Strontium (Sr).
+This section outlines the methodology for creating interactive maps that visualize the concentration clusters of scaling elements in produced water. The primary elements of focus are Calcium (Ca), Magnesium (Mg), Bicarbonate (HCO3), Silicon (Si), Total Iron (FeTot), Barium (Ba), and Strontium (Sr). We aim to identify regions where produced water presents the most significant scaling challenges, using the top 10% of sample concentrations as a benchmark.
 
-In order to identify the sources of the most problematic produced water for each of these elements, the top 10% of sample concentrations are considered to produce maps showing which basins produce the highest concentrations of the respective elements of interest.
+The dataset is first cleaned to exclude rows with missing values for the scaling elements, latitude, or longitude. This ensures that the maps are based on complete and accurate data.For each scaling element, we determine the concentration threshold that marks the top 10% of samples. This is achieved by calculating the specified percentile (90th percentile) for each element.The dataset is then filtered to include only those samples where the concentration of the scaling element is at or above the determined threshold.
 
-<p style="color:red">[ ... ]
+A Folium map is initialized, centered around the mean latitude and longitude of the high-concentration data points, with a zoom level appropriate for the scale of analysis.A custom color gradient is created to visually represent the range of concentrations. The gradient spans from medium to dark shades, corresponding to the range from the minimum threshold value to the maximum concentration observed.
+
+To enhance geographical context, outlines of US sedimentary basins are added to the maps. These outlines are sourced from a shapefile and rendered with a semi-transparent gray color to distinguish them without overshadowing the concentration data.Each high-concentration sample is represented on the map as a circle marker, with its color indicating the concentration of the scaling element based on the defined color scale.
+
+The maps are interactive, allowing users to zoom in and out, and to observe the precise concentration values and locations of each sample.
+
 
 #### 4.3.1. Screenshots of Interactive HTML Maps  
 
-An example screenshot of the maps showing the samples with the highest Ca concentrations is included below. Maps were generated for all scaling elements listed above.
+An example screenshot of the maps showing the samples with the highest Ca concentrations is included below. Maps were generated for all scaling elements listed above.These maps provide a clear visualization of the geographical distribution and concentration clusters of scaling elements in produced water.
 
-<p style="color:red">[ ... ]
+![CaMap](images/geo_plots/Ca_high_concentration_map_screenshot.png)  
 
 #### 4.3.2. Tools & Libraries Used  
 
 - Pandas for DataFrame operations.
-- Geopandas for handling geospatial data.
-- Folium for creating interactive maps.  
+- Geopandas for handling geospatial data and integrating the sedimentary basin shapefile.
+- Folium for creating and customizing interactive maps.  
+- Branca: Fr creating the custom color scale gradient.
 
-This methodology enables a clear and interactive visualization of lithium concentration distributions across geological basins. It provides valuable insights into spatial patterns and concentration clusters, which are essential for geochemical analysis and decision-making in resource exploration and environmental studies.  
+This methodology provides a comprehensive approach to visualizing scaling element concentrations in produced water. By mapping the top 10% concentrations, it highlights the areas most susceptible to scaling challenges, offering valuable insights for environmental management and decision-making in the oil and gas industry.  
 
 ### <p style="color:gray">4.4. Methodology for Mapping Lithium Concentration Clusters  
 
@@ -246,6 +252,14 @@ This methodology enables a clear and interactive visualization of lithium concen
 ### <p style="color:gray">4.5. Methodology for Generating a Linear Regression on Li Concentration vs Depth
 
 Linear regression plots were generated to investigate whether there is a linear relationship between Li concentration and depth. Data was grouped and assesed for each basin as the depth varies among basins. The resulting regression plots resulted in r-squared values that are too low to indicate a correlation. Additional clustering would be necessary to conclusively demonstrate whether another scenario would glean differing results.
+
+Given the low correlation between Li concentration and well depth, we should redo the regression analysis using different clustering techniques. This will involve grouping the data in various ways to explore potential hidden patterns or relationships.
+
+To better understand the relationships between different variables, Principal Component Analysis (PCA) should be employed. This technique helps in identifying the most significant correlations between the concentrations of various elements and the physical properties of the wells, such as depth. PCA will provide insights into which elements show a strong correlation with well depth.
+
+Based on the outcomes of the PCA, we should conduct regression analyses on those elements that demonstrate a strong correlation with well depth. This targeted approach is expected to yield more meaningful results and reliable predictive models.
+
+After identifying elements with significant depth correlations, the best fitting regression models for these relationships should be selected. These models should be used to predict the concentrations of elements in wells where depth information is available but elemental concentration data is missing.
 
 #### 4.5.1. Example Plot Image  
 
