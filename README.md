@@ -197,18 +197,17 @@ A example image of each style of plot for the Permian Basin data are included be
 
 This section outlines the methodology for creating interactive maps that visualize the concentration clusters of scaling elements in produced water. The primary elements of focus are Calcium (Ca), Magnesium (Mg), Bicarbonate (HCO3), Silicon (Si), Total Iron (FeTot), Barium (Ba), and Strontium (Sr). We aim to identify regions where produced water presents the most significant scaling challenges, using the top 10% of sample concentrations as a benchmark.
 
-The dataset is first cleaned to exclude rows with missing values for the scaling elements, latitude, or longitude. This ensures that the maps are based on complete and accurate data.For each scaling element, we determine the concentration threshold that marks the top 10% of samples. This is achieved by calculating the specified percentile (90th percentile) for each element.The dataset is then filtered to include only those samples where the concentration of the scaling element is at or above the determined threshold.
+The dataset is first cleaned to exclude rows with missing values for the scaling elements, latitude, or longitude. This ensures that the maps are based on complete and accurate data. For each scaling element, we determine the concentration threshold that marks the top 10% of samples. This is achieved by calculating the specified percentile (90th percentile) for each element. The dataset is then filtered to include only those samples where the concentration of the scaling element is at or above the determined threshold.
 
-A Folium map is initialized, centered around the mean latitude and longitude of the high-concentration data points, with a zoom level appropriate for the scale of analysis.A custom color gradient is created to visually represent the range of concentrations. The gradient spans from medium to dark shades, corresponding to the range from the minimum threshold value to the maximum concentration observed.
+A Folium map is initialized, centered around the mean latitude and longitude of the high-concentration data points, with a zoom level appropriate for the scale of analysis. A custom color gradient is created to visually represent the range of concentrations. The gradient spans from medium to dark shades, corresponding to the range from the minimum threshold value to the maximum concentration observed.
 
-To enhance geographical context, outlines of US sedimentary basins are added to the maps. These outlines are sourced from a shapefile and rendered with a semi-transparent gray color to distinguish them without overshadowing the concentration data.Each high-concentration sample is represented on the map as a circle marker, with its color indicating the concentration of the scaling element based on the defined color scale.
+To enhance geographical context, outlines of US sedimentary basins are added to the maps. These outlines are sourced from a shapefile and rendered with a semi-transparent gray color to distinguish them without overshadowing the concentration data. Each high-concentration sample is represented on the map as a circle marker, with its color indicating the concentration of the scaling element based on the defined color scale.
 
 The maps are interactive, allowing users to zoom in and out, and to observe the precise concentration values and locations of each sample.
 
-
 #### 4.3.1. Screenshots of Interactive HTML Maps  
 
-An example screenshot of the maps showing the samples with the highest Ca concentrations is included below. Maps were generated for all scaling elements listed above.These maps provide a clear visualization of the geographical distribution and concentration clusters of scaling elements in produced water.
+An example screenshot of the map showing the samples with the highest Ca concentrations is included below. Maps were generated for all scaling elements listed above. These maps provide a clear visualization of the geographical distribution and concentration clusters of scaling elements in the produced water included in the dataset.
 
 ![CaMap](images/geo_plots/Ca_90_perentile_map_screenshot.png)  
 
@@ -217,7 +216,7 @@ An example screenshot of the maps showing the samples with the highest Ca concen
 - Pandas for DataFrame operations.
 - Geopandas for handling geospatial data and integrating the sedimentary basin shapefile.
 - Folium for creating and customizing interactive maps.  
-- Branca: Fr creating the custom color scale gradient.
+- Branca: for creating the custom color scale gradient.
 
 This methodology provides a comprehensive approach to visualizing scaling element concentrations in produced water. By mapping the top 10% concentrations, it highlights the areas most susceptible to scaling challenges, offering valuable insights for environmental management and decision-making in the oil and gas industry.  
 
@@ -225,7 +224,7 @@ This methodology provides a comprehensive approach to visualizing scaling elemen
 
 The objective of this visualization is to spatially visualize the distribution of lithium (Li) concentrations in various geological basins using a cluster mapping approach with a focus on both overall concentration clusters and high concentration areas using interactive maps.  
 
-The DataFrame is cleaned to remove NaN  values specifically from the 'LATITUDE', 'LONGITUDE', and 'Li' columns. This ensures that only complete records are used for the analysis. A function, assign_cluster, is created to categorize lithium concentrations into distinct clusters based on predefined concentration ranges (<= 20 ppm, 21-40 ppm, 41-60 ppm, 61-80 ppm, > 80 ppm). This categorization aids in differentiating areas based on lithium concentration levels.  
+The DataFrame is cleaned to remove NaN values specifically from the 'LATITUDE', 'LONGITUDE', and 'Li' columns. This ensures that only complete records are used for the analysis. A function, assign_cluster, is created to categorize lithium concentrations into distinct clusters based on predefined concentration ranges (<= 20 ppm, 21-40 ppm, 41-60 ppm, 61-80 ppm, > 80 ppm). This categorization aids in differentiating areas based on lithium concentration levels.  
 
 The assign_cluster function is applied to the 'Li' column of the DataFrame. This process assigns each record to a lithium concentration cluster, creating a new column 'Li_Cluster'. A GeoDataFrame is created from the cleaned DataFrame. The 'LATITUDE' and 'LONGITUDE' columns are used to create point geometries, facilitating spatial analysis and visualization. A Folium map object, m, is initialized, centered around the mean latitude and longitude of the data points to provide a comprehensive view of the study area.   
 
