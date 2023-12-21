@@ -205,7 +205,7 @@ To enhance geographical context, outlines of US sedimentary basins are added to 
 
 The maps are interactive, allowing users to zoom in and out, and to observe the precise concentration values and locations of each sample.
 
-#### 4.3.1. Screenshots of Interactive HTML Maps  
+#### 4.3.1. Example Screenshot of Interactive HTML Maps  
 
 An example screenshot of the map showing the samples with the highest Ca concentrations is included below. Maps were generated for all scaling elements listed above. These maps provide a clear visualization of the geographical distribution and concentration clusters of scaling elements in the produced water included in the dataset.
 
@@ -216,7 +216,7 @@ An example screenshot of the map showing the samples with the highest Ca concent
 - Pandas for DataFrame operations.
 - Geopandas for handling geospatial data and integrating the sedimentary basin shapefile.
 - Folium for creating and customizing interactive maps.  
-- Branca: for creating the custom color scale gradient.
+- Branca for creating the custom color scale gradient.
 
 This methodology provides a comprehensive approach to visualizing scaling element concentrations in produced water. By mapping the top 10% concentrations, it highlights the areas most susceptible to scaling challenges, offering valuable insights for environmental management and decision-making in the oil and gas industry.  
 
