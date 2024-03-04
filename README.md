@@ -312,18 +312,20 @@ In summary, this project not only offers a deeper understanding of produced wate
 
 ## <p style="color:#CC6600">7. Technologies:</p> 
 
-- [Python 3.10 or higher](https://www.python.org/)
-- [Pandas](https://pandas.pydata.org/)
-- [NumPy](https://www.numpy.org)
-- [Matplotlib](https://matplotlib.org/)
-- [SciPy](https://www.scipy.org/scipylib)
-- [Scikit-learn](https://scikit-learn.org/stable/index.html)
-- [WQChartPy](https://github.com/jyangfsu/WQChartPy/tree/main?tab=readme-ov-file) 
-- [Seaborn](https://seaborn.pydata.org/#) 
-- [GeoPandas](https://geopandas.org/en/stable/#) 
-- [Folium](https://pypi.org/project/folium/)
-- [Branca](https://pypi.org/project/branca/)
-- [HTML](https://html.spec.whatwg.org/multipage/)
+- Languages 
+    - [Python 3.10 or higher](https://www.python.org/)
+    - [HTML](https://html.spec.whatwg.org/multipage/)
+- Libraries / Modules / Plugins
+    - [Pandas](https://pandas.pydata.org/)
+    - [NumPy](https://www.numpy.org)
+    - [Matplotlib](https://matplotlib.org/)
+    - [SciPy](https://www.scipy.org/scipylib)
+    - [Scikit-learn](https://scikit-learn.org/stable/index.html)
+    - [WQChartPy](https://github.com/jyangfsu/WQChartPy/tree/main?tab=readme-ov-file) 
+    - [Seaborn](https://seaborn.pydata.org/#) 
+    - [GeoPandas](https://geopandas.org/en/stable/#) 
+    - [Folium](https://pypi.org/project/folium/)
+    - [Branca](https://pypi.org/project/branca/)
 
 ## <p style="color:#CC6600">8. Contributors:</p> 
 
